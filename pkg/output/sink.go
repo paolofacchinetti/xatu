@@ -3,6 +3,7 @@ package output
 import (
 	"context"
 
+	"github.com/ethpandaops/xatu/pkg/output/clickhouse"
 	"github.com/ethpandaops/xatu/pkg/output/http"
 	"github.com/ethpandaops/xatu/pkg/output/stdout"
 	xatuSink "github.com/ethpandaops/xatu/pkg/output/xatu"
@@ -12,10 +13,11 @@ import (
 type SinkType string
 
 const (
-	SinkTypeUnknown SinkType = "unknown"
-	SinkTypeHTTP    SinkType = http.SinkType
-	SinkTypeStdOut  SinkType = stdout.SinkType
-	SinkTypeXatu    SinkType = xatuSink.SinkType
+	SinkTypeUnknown    SinkType = "unknown"
+	SinkTypeHTTP       SinkType = http.SinkType
+	SinkTypeStdOut     SinkType = stdout.SinkType
+	SinkTypeXatu       SinkType = xatuSink.SinkType
+	SinkTypeClickhouse SinkType = clickhouse.SinkType
 )
 
 type Sink interface {
